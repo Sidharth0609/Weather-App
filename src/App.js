@@ -20,7 +20,7 @@ export const WeatherIcons = {
   "11d": "/react-weather-app/icons/storm.svg",
   "11n": "/react-weather-app/icons/storm.svg",
 };
-
+const ApiKey="72039cfe04a698ac111bd45084ed2fa9";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -54,7 +54,7 @@ function App() {
   const fetchWeather = async (e) => {
     e.preventDefault();
     const response = await Axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=72039cfe04a698ac111bd45084ed2fa9`,
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ApiKey}`,
     );
     updateWeather(response.data);
   };
